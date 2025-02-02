@@ -166,8 +166,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 5,
     marginTop: 10,
-    width: "100%", // Agregado para ocupar el 90% del ancho
-    alignItems: "center", // Centrar el texto dentro del botón
+    width: "100%",
+    alignItems: "center",
   },
   loginButtonText: {
     color: "white",

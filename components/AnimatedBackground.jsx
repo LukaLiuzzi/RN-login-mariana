@@ -6,8 +6,14 @@ const AnimatedGradient = Animated.createAnimatedComponent(LinearGradient)
 const AnimatedBackground = ({ animatedValue }) => {
   const translateY = animatedValue.interpolate({
     inputRange: [0, 1],
-    outputRange: [-400, 0], // Reducida la distancia
-    extrapolate: "clamp", // Previene rebotes
+    outputRange: [-400, 750],
+    extrapolate: "clamp",
+  })
+
+  const scaleY = animatedValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.5, 1.2],
+    extrapolate: "clamp",
   })
 
   return (
@@ -16,7 +22,7 @@ const AnimatedBackground = ({ animatedValue }) => {
       style={[
         styles.background,
         {
-          transform: [{ translateY }],
+          transform: [{ translateY }, { scaleY }],
         },
       ]}
     />
@@ -27,11 +33,11 @@ const styles = StyleSheet.create({
   background: {
     position: "absolute",
     width: "100%",
-    height: "120%", // Reducido para mejor control
+    height: "100%",
     borderRadius: 70,
     zIndex: 2,
     left: 0,
-    top: 0, // Aseguramos que comience desde arriba
+    top: 0,
   },
 })
 

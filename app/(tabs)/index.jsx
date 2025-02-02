@@ -18,13 +18,13 @@ const LoginScreen = () => {
     Animated.parallel([
       Animated.timing(fadeAnim, {
         toValue: 0,
-        duration: 400,
+        duration: 200,
         useNativeDriver: true,
         easing: Easing.out(Easing.ease),
       }),
       Animated.timing(gradientAnim, {
         toValue: toValue ? 0 : 1,
-        duration: 1200,
+        duration: 2000,
         useNativeDriver: true,
         easing: Easing.inOut(Easing.ease),
       }),
@@ -32,7 +32,7 @@ const LoginScreen = () => {
       setShowCredentials(!showCredentials)
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 400,
+        duration: 200,
         useNativeDriver: true,
         easing: Easing.in(Easing.ease),
       }).start(() => {
